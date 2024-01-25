@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bed35dee545654c96f17fd7fd5eca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 10
+  maxTime: 100
   timerSlider: {fileID: 44213349}
   gameManager: {fileID: 127141016}
 --- !u!1 &127141015
@@ -2060,10 +2060,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bfd48050c470e34982b492c0895de57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs: {fileID: 359117011901199930, guid: e2d3772bb0141654d88f66782bcfc468, type: 3}
-  spawnRate: 1.7
-  minHeight: -1
-  maxHeight: 1
+  coralPrefab: {fileID: 359117011901199930, guid: e2d3772bb0141654d88f66782bcfc468, type: 3}
+  ranjauPrefab: {fileID: 3028905838397023439, guid: 4fc3a46a8ff54774ea6dec2ae55ecf9c, type: 3}
+  spawnRateCoral: 1.7
+  spawnRateRanjau: 2
   oxygen: {fileID: 44213350}
   timeToAdd: 2
 --- !u!4 &1845977640
