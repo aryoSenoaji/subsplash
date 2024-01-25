@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Oxygen : MonoBehaviour
 {
     [Header("Timer Settings")]
-    public float maxTime = 60f; // Waktu maksimum dalam detik
+    public float maxTime;
     private float currentTime;
 
     [Header("UI Slider")]
@@ -64,5 +64,14 @@ public class Oxygen : MonoBehaviour
                 isCountingDown = false; // Berhenti menghitung ketika waktu habis
             }
         }
+    }
+
+    // Menambah waktu ke timer
+    public void AddTime(float timeToAdd)
+    {
+        currentTime += timeToAdd;
+
+        // Pastikan waktu tidak melebihi maksimum
+        currentTime = Mathf.Min(currentTime, maxTime);
     }
 }

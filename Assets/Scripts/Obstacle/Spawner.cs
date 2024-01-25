@@ -9,11 +9,15 @@ public class Spawner : MonoBehaviour
     public float minHeight = -1f;
     public float maxHeight = 1f;
 
+    // Tambahkan reference ke Oxygen
+    public Oxygen oxygen;
+
+    public float timeToAdd;
+
     private void OnEnable()
     {
         InvokeRepeating(nameof(Spawn), spawnRate, spawnRate);
     }
-  
 
     private void OnDisable()
     {
@@ -24,5 +28,11 @@ public class Spawner : MonoBehaviour
     {
         GameObject corals = Instantiate(prefabs, transform.position, Quaternion.identity);
         corals.transform.position += Vector3.up * Random.Range(minHeight, maxHeight);
+
+        // Tambahkan waktu ke timer Oxygen
+        if (oxygen != null)
+        {
+            oxygen.AddTime(timeToAdd); // Menggunakan variabel timeToAdd
+        }
     }
 }

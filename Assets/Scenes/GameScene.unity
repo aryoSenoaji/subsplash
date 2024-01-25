@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bed35dee545654c96f17fd7fd5eca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 5
+  maxTime: 10
   timerSlider: {fileID: 44213349}
   gameManager: {fileID: 127141016}
 --- !u!1 &127141015
@@ -2064,6 +2064,8 @@ MonoBehaviour:
   spawnRate: 1.7
   minHeight: -1
   maxHeight: 1
+  oxygen: {fileID: 44213350}
+  timeToAdd: 2
 --- !u!4 &1845977640
 Transform:
   m_ObjectHideFlags: 0
