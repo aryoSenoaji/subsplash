@@ -61,11 +61,25 @@ public class Spawner : MonoBehaviour
     {
         float spawnRadius = 5f;
 
-        // Posisi acak di sekitar posisi coral
+        // Posisi acak di sekitar posisi coral, namun masih dalam batas kamera
         Vector3 randomOffset = new Vector3(Random.Range(-spawnRadius, spawnRadius), Random.Range(-spawnRadius, spawnRadius), Random.Range(-spawnRadius, spawnRadius));
-
         Vector3 ranjauSpawnPosition = coralPosition + randomOffset;
+
+        // Batas-batas kamera
+        float cameraHeight = Camera.main.orthographicSize;
+        float cameraWidth = cameraHeight * Camera.main.aspect;
+
+        // Batas-batas area spawn ranjau
+        float minX = coralPosition.x - cameraWidth;
+        float maxX = coralPosition.x + cameraWidth;
+        float minY = coralPosition.y - cameraHeight;
+        float maxY = coralPosition.y + cameraHeight;
+
+        // Pastikan ranjau tidak keluar dari area spawn
+        ranjauSpawnPosition.x = Mathf.Clamp(ranjauSpawnPosition.x, minX, maxX);
+        ranjauSpawnPosition.y = Mathf.Clamp(ranjauSpawnPosition.y, minY, maxY);
 
         return ranjauSpawnPosition;
     }
+
 }
