@@ -16,7 +16,7 @@ public class Corals : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        transform.position += speed * Time.deltaTime * Vector3.left;
         if(transform.position.x < leftEdge) 
         {
             Destroy (gameObject);
