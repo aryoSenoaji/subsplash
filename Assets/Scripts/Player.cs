@@ -23,13 +23,11 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Start is called before the first frame update
     private void Start()
     {
         InvokeRepeating(nameof(AnimateSprite), 0.15f, 0.15f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!gameStarted)
@@ -41,7 +39,6 @@ public class Player : MonoBehaviour
             }
             else
             {
-                // Jika game belum dimulai, pemain tidak dapat menggerakkan pemain ke atas
                 return;
             }
         }
@@ -59,7 +56,7 @@ public class Player : MonoBehaviour
     {
         spriteIndex++;
 
-        if(spriteIndex >= sprites.Length) 
+        if (spriteIndex >= sprites.Length)
         {
             spriteIndex = 0;
         }
@@ -69,16 +66,23 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag ==  "Obstacle")
+        if (other.gameObject.tag == "Obstacle")
         {
             FindObjectOfType<GameManager>().GameOver();
         }
-        else if (other.gameObject.tag == "Scoring")
+        else if (other.gameObject.CompareTag("Scoring"))
         {
             FindObjectOfType<GameManager>().IncreaseScore();
         }
+        else if (other.gameObject.CompareTag("Ranjau"))
+        {
+            // Menyentuh ranjau, kurangi waktu pada komponen Oxygen
+            Oxygen oxygen = FindObjectOfType<Oxygen>();
+            if (oxygen != null)
+            {
+                // Panggil metode ReduceTime() pada Oxygen dengan nilai timeToReduce dari Oxygen
+                oxygen.ReduceTime(oxygen.timeToReduce);
+            }
+        }
     }
-
-    
-
 }

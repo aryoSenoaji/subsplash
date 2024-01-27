@@ -342,6 +342,7 @@ MonoBehaviour:
   maxTime: 100
   timerSlider: {fileID: 44213349}
   gameManager: {fileID: 127141016}
+  timeToReduce: 80
 --- !u!1 &127141015
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,7 +841,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 949621380, guid: 2d6d851b36064af47844f1d30e555c2c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -62,7 +62,7 @@ public class Spawner : MonoBehaviour
         float spawnRadius = 5f;
 
         // Posisi acak di sekitar posisi coral, namun masih dalam batas kamera
-        Vector3 randomOffset = new Vector3(Random.Range(-spawnRadius, spawnRadius), Random.Range(-spawnRadius, spawnRadius), Random.Range(-spawnRadius, spawnRadius));
+        Vector3 randomOffset = new(Random.Range(-spawnRadius, spawnRadius), Random.Range(-spawnRadius, spawnRadius), Random.Range(-spawnRadius, spawnRadius));
         Vector3 ranjauSpawnPosition = coralPosition + randomOffset;
 
         // Batas-batas kamera
