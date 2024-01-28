@@ -339,10 +339,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bed35dee545654c96f17fd7fd5eca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 100
+  maxTime: 10
   timerSlider: {fileID: 44213349}
   gameManager: {fileID: 127141016}
-  timeToReduce: 80
+  timeToReduce: 1.3
 --- !u!1 &127141015
 GameObject:
   m_ObjectHideFlags: 0
