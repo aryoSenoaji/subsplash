@@ -342,7 +342,7 @@ MonoBehaviour:
   maxTime: 10
   timerSlider: {fileID: 44213349}
   gameManager: {fileID: 127141016}
-  timeToReduce: 1.3
+  timeToReduce: 1.5
 --- !u!1 &127141015
 GameObject:
   m_ObjectHideFlags: 0
