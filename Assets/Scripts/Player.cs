@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
     private int spriteIndex;
+    AudioManager audioManager; 
 
     private Vector3 direction;
     public float gravity = -9.8f;
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
     {
         Instance = this;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Start()
@@ -46,6 +48,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             direction = Vector3.up * strenght;
+            audioManager.PlaySFX(audioManager.jump);
         }
 
         direction.y += gravity * Time.deltaTime;
@@ -69,10 +72,12 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Obstacle")
         {
             FindObjectOfType<GameManager>().GameOver();
+            audioManager.PlaySFX(audioManager.death);
         }
         else if (other.gameObject.CompareTag("Scoring"))
         {
             FindObjectOfType<GameManager>().IncreaseScore();
+            audioManager.PlaySFX(audioManager.score);
         }
         else if (other.gameObject.CompareTag("Ranjau"))
         {
@@ -82,6 +87,7 @@ public class Player : MonoBehaviour
             {
                 // Panggil metode ReduceTime() pada Oxygen dengan nilai timeToReduce dari Oxygen
                 oxygen.ReduceTime(oxygen.timeToReduce);
+                audioManager.PlaySFX(audioManager.ranjau);
             }
         }
     }
