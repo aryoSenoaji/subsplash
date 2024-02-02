@@ -38,8 +38,6 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("HighScore", score);
         }
-       
-
     }
 
     public void IncreaseScore()
@@ -47,6 +45,4 @@ public class GameManager : MonoBehaviour
         score++;
         scoreText.text = score.ToString();
     }
-
-    
 }
