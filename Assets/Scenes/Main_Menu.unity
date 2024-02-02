@@ -2679,6 +2679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myMixer: {fileID: 24100000, guid: 8b078cb8d8994a54bb61b1e0c71ffa3a, type: 2}
   musicSlider: {fileID: 74608783}
+  SFXSlider: {fileID: 1860383353}
 --- !u!1 &1575641893
 GameObject:
   m_ObjectHideFlags: 0
@@ -3268,7 +3269,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1523298063}
         m_TargetAssemblyTypeName: VolumeSetting, Assembly-CSharp
-        m_MethodName: SetMusicVolume
+        m_MethodName: SetSFXVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
